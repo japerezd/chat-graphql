@@ -18,7 +18,7 @@ function isSubscription ({ query }) {
 }
 
 export const client = new ApolloClient({
-  link: split(),
+  link: split(isSubscription, wsLink, httpLink),
   cache: new InMemoryCache(),
 });
 
